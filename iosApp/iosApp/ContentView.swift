@@ -162,7 +162,13 @@ struct ContentView: View {
                         TextField("Fait à", text: $date)
                             .padding(.horizontal)
                             .background(Color(red: 0.89, green: 0.745, blue: 0.776, opacity: 0.38))
-                        //TODO Signature field.
+                        
+                        Spacer()
+                            .frame(height: 24.0)
+                        
+                        SignaturePadView()
+                            .padding(.horizontal)
+                            .frame(width: 400, height: 250, alignment: .center)
                     }
                     .padding(.horizontal)
                 }

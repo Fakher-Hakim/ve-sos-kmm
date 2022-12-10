@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		BBD6E51E9A321CEB63BFCFFF /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF36B799070289FFFE9E85D /* Pods_iosApp.framework */; };
 		CC32B7762944C4C7001497E8 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC32B7742944C4C7001497E8 /* RadioButton.swift */; };
 		CC32B7772944C4C7001497E8 /* SectionTitleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC32B7752944C4C7001497E8 /* SectionTitleComponent.swift */; };
+		CC32B7792944CACA001497E8 /* SignaturePadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC32B7782944CACA001497E8 /* SignaturePadView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		8EF36B799070289FFFE9E85D /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC32B7742944C4C7001497E8 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		CC32B7752944C4C7001497E8 /* SectionTitleComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTitleComponent.swift; sourceTree = "<group>"; };
+		CC32B7782944CACA001497E8 /* SignaturePadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignaturePadView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			children = (
 				CC32B7742944C4C7001497E8 /* RadioButton.swift */,
 				CC32B7752944C4C7001497E8 /* SectionTitleComponent.swift */,
+				CC32B7782944CACA001497E8 /* SignaturePadView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC32B7792944CACA001497E8 /* SignaturePadView.swift in Sources */,
 				CC32B7772944C4C7001497E8 /* SectionTitleComponent.swift in Sources */,
 				CC32B7762944C4C7001497E8 /* RadioButton.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
