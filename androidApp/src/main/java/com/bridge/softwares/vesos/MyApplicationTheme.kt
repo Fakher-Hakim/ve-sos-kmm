@@ -1,4 +1,4 @@
-package com.bridge.softwares.vesos.android
+package com.bridge.softwares.vesos
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -18,19 +18,19 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun MyApplicationTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
     val colors = if (darkTheme) {
         darkColors(
-            primary = Color(0xFFBB86FC),
+            primary = Color(0xFF6200EE),
             primaryVariant = Color(0xFF3700B3),
             secondary = Color(0xFF03DAC5)
         )
     } else {
         lightColors(
-            primary = Color(0xFF6200EE),
-            primaryVariant = Color(0xFF3700B3),
-            secondary = Color(0xFF03DAC5)
+            primary = Color(0xFF00A6EE),
+            primaryVariant = Color(0xFF0F6793),
+            secondary = Color(0xFFE3BEC6)
         )
     }
     val typography = Typography(
