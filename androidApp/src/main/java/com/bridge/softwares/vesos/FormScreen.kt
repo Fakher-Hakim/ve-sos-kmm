@@ -1,5 +1,7 @@
 package com.bridge.softwares.vesos
 
+import android.graphics.Bitmap
+import android.os.Environment
 import androidx.annotation.StringRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -35,6 +37,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
@@ -46,6 +49,10 @@ import com.bridge.softwares.vesos.android.R
 import com.bridge.softwares.vesos.layout.RadioButtonVELayout
 import com.bridge.softwares.vesos.theme.VETheme
 import com.github.gcacace.signaturepad.views.SignaturePad
+import java.io.File
+import java.io.FileNotFoundException
+import java.io.FileOutputStream
+import java.io.IOException
 
 @Composable
 fun FormScreen() {
@@ -111,7 +118,7 @@ fun FormScreen() {
 
             RadioButtonVELayout(
                 modifier = Modifier.fillMaxWidth(),
-                options = listOf("Particulier", "Société"),
+                options = listOf(PARTICULIER, SOCIETE),
                 onOptionChecked = {
                     person = it
                 }
@@ -201,16 +208,107 @@ fun FormScreen() {
         }
 
         item {
+            val context = LocalContext.current
             Spacer(modifier = Modifier.height(48.dp))
             Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
                 Button(
                     colors = ButtonDefaults.buttonColors(backgroundColor = VETheme.colors.primary),
-                    onClick = { /*TODO*/ }) {
+                    onClick = {
+                        val bitmap = signatureView.signatureBitmap
+                        val filePath = saveBitmap(bitmap)
+                        if (bitmap != null) {
+                            shareEmail(
+                                context = context,
+                                subject = "SOS-VE formulaire",
+                                addresses = listOf("hakim.fakher@gmail.com").toTypedArray(),
+                                body = buildMailBody(),
+                                attachmentPath = filePath,
+                                onError = {
+                                    //TODO show error.
+                                }
+                            )
+                        }
+                    }
+                ) {
                     Text(text = stringResource(id = R.string.envoyer), color = Color.White)
                 }
             }
         }
     }
+}
+
+fun buildMailBody(
+    village: String,
+    person: String,
+    amount: String,
+    amountLetter: String,
+    name: String,
+    address: String,
+    email: String,
+    phone: String,
+    bank: String,
+    agency: String,
+    rib: String,
+    month: String,
+    year: String,
+    faitA: String,
+    le: String,
+): String {
+    var body = ""
+
+    body += if (person == SOCIETE) {
+        "Type personne: Morale" + NEW_LINE +
+                "Raison Social: ${raisonSocial.editText?.text}" + NEW_LINE +
+                "Matricule fiscale: ${matricule.editText?.text}" + NEW_LINE +
+                "Premier Responsable: ${responsable.editText?.text}" + NEW_LINE +
+    } else {
+        "Type personne: Physique" + NEW_LINE +
+                "Nom, Prenom: $name" + NEW_LINE +
+                "Profession: $profession" + NEW_LINE
+    }
+
+    body += "Adresse: $address" + NEW_LINE +
+            "E-Mail: $email" + NEW_LINE +
+            "Tel: $phone$NEW_LINE"
+
+    body += "Banque: $bank" + NEW_LINE +
+            "Agence: $agency" + NEW_LINE +
+            "RIB: $rib" + NEW_LINE +
+            "Mois de prelevement: $month" + NEW_LINE +
+            "Annee de prelevement: $year" + NEW_LINE
+
+    body += "Fait à: $faitA" + NEW_LINE +
+            "Le: $le" + NEW_LINE
+
+    body += "Montant: $amount" + NEW_LINE +
+            "En lettre: $amountLetter" + NEW_LINE +
+            "Village: $village"
+}
+
+private fun saveBitmap(
+    bitmap: Bitmap,
+): String {
+    val externalStoragePath =
+        Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString()
+    val dir = File(externalStoragePath)
+    dir.mkdirs()
+
+    val file = File(dir, "ve_sos_${System.currentTimeMillis()}.png")
+    if (file.exists()) file.delete()
+    try {
+        val outputStream = FileOutputStream(file)
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
+        outputStream.flush()
+        outputStream.close()
+        return file.absolutePath
+    } catch (e: FileNotFoundException) {
+        e.printStackTrace()
+    } catch (e: IOException) {
+        e.printStackTrace()
+    } catch (e: IOException) {
+        e.printStackTrace()
+    }
+    return ""
 }
 
 @Composable
@@ -236,3 +334,7 @@ private fun SectionHeaderLayout(@StringRes titleRes: Int) {
         )
     }
 }
+
+const val NEW_LINE = "\n"
+const val PARTICULIER = "Particulier"
+const val SOCIETE = "Société"
