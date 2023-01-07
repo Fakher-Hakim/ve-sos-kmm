@@ -1,22 +1,15 @@
 PODS:
-  - shared (1.0):
-    - SignaturePad
-  - SignaturePad (1.1.1)
+  - shared (1.0)
 
 DEPENDENCIES:
   - shared (from `../shared`)
-
-SPEC REPOS:
-  trunk:
-    - SignaturePad
 
 EXTERNAL SOURCES:
   shared:
     :path: "../shared"
 
 SPEC CHECKSUMS:
-  shared: 2a6f83a72d2ac156cd8f1dd5796aad5c540cd88f
-  SignaturePad: b0737dd95909731532e7bea0214e603bed72796f
+  shared: 595ca9fb88595314adbe6e3a495b5df24f86577b
 
 PODFILE CHECKSUM: 6d717e6a096db2129addfa044dd6346a75adff62
 

@@ -19,8 +19,6 @@ kotlin {
         framework {
             baseName = "shared"
         }
-
-        pod("SignaturePad")
     }
     
     sourceSets {

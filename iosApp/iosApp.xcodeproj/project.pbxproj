@@ -3,19 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
-		7555FF83242A565900829871 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* FormView.swift */; };
 		BBD6E51E9A321CEB63BFCFFF /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF36B799070289FFFE9E85D /* Pods_iosApp.framework */; };
-		CC32B7762944C4C7001497E8 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC32B7742944C4C7001497E8 /* RadioButton.swift */; };
-		CC32B7772944C4C7001497E8 /* SectionTitleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC32B7752944C4C7001497E8 /* SectionTitleComponent.swift */; };
-		CC32B7792944CACA001497E8 /* SignaturePadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC32B7782944CACA001497E8 /* SignaturePadView.swift */; };
-		CC7B06082968882E00327CB2 /* SignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B06072968882E00327CB2 /* SignatureView.swift */; };
+		CC7B063A2969ACD200327CB2 /* SwiftUIDigitalSignature in Frameworks */ = {isa = PBXBuildFile; productRef = CC7B06392969ACD200327CB2 /* SwiftUIDigitalSignature */; };
+		CC7B063D2969AEEE00327CB2 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B063C2969AEEE00327CB2 /* FormView.swift */; };
+		CC7B06442969AEFA00327CB2 /* SendEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B063F2969AEFA00327CB2 /* SendEmailViewController.swift */; };
+		CC7B06452969AEFA00327CB2 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B06402969AEFA00327CB2 /* RadioButton.swift */; };
+		CC7B06462969AEFA00327CB2 /* SectionTitleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B06412969AEFA00327CB2 /* SectionTitleComponent.swift */; };
+		CC7B06472969AEFA00327CB2 /* FormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B06432969AEFA00327CB2 /* FormData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,13 +26,13 @@
 		0D5549CF9E1F89B320F63A46 /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7555FF82242A565900829871 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EF36B799070289FFFE9E85D /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC32B7742944C4C7001497E8 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
-		CC32B7752944C4C7001497E8 /* SectionTitleComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTitleComponent.swift; sourceTree = "<group>"; };
-		CC32B7782944CACA001497E8 /* SignaturePadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignaturePadView.swift; sourceTree = "<group>"; };
-		CC7B06072968882E00327CB2 /* SignatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureView.swift; sourceTree = "<group>"; };
+		CC7B063C2969AEEE00327CB2 /* FormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
+		CC7B063F2969AEFA00327CB2 /* SendEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendEmailViewController.swift; sourceTree = "<group>"; };
+		CC7B06402969AEFA00327CB2 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		CC7B06412969AEFA00327CB2 /* SectionTitleComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTitleComponent.swift; sourceTree = "<group>"; };
+		CC7B06432969AEFA00327CB2 /* FormData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC7B063A2969ACD200327CB2 /* SwiftUIDigitalSignature in Frameworks */,
 				BBD6E51E9A321CEB63BFCFFF /* Pods_iosApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,8 +94,9 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
-				CC7B06062968881600327CB2 /* Screens */,
-				CC32B7722944C4C7001497E8 /* UI */,
+				CC7B06422969AEFA00327CB2 /* Models */,
+				CC7B063E2969AEFA00327CB2 /* UI */,
+				CC7B063B2969AEEE00327CB2 /* Screens */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
@@ -102,31 +105,30 @@
 			path = iosApp;
 			sourceTree = "<group>";
 		};
-		CC32B7722944C4C7001497E8 /* UI */ = {
+		CC7B063B2969AEEE00327CB2 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				CC32B7732944C4C7001497E8 /* Components */,
+				CC7B063C2969AEEE00327CB2 /* FormView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		CC7B063E2969AEFA00327CB2 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CC7B063F2969AEFA00327CB2 /* SendEmailViewController.swift */,
+				CC7B06402969AEFA00327CB2 /* RadioButton.swift */,
+				CC7B06412969AEFA00327CB2 /* SectionTitleComponent.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
 		};
-		CC32B7732944C4C7001497E8 /* Components */ = {
+		CC7B06422969AEFA00327CB2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CC32B7742944C4C7001497E8 /* RadioButton.swift */,
-				CC32B7752944C4C7001497E8 /* SectionTitleComponent.swift */,
-				CC32B7782944CACA001497E8 /* SignaturePadView.swift */,
+				CC7B06432969AEFA00327CB2 /* FormData.swift */,
 			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		CC7B06062968881600327CB2 /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				7555FF82242A565900829871 /* FormView.swift */,
-				CC7B06072968882E00327CB2 /* SignatureView.swift */,
-			);
-			path = Screens;
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,13 +142,15 @@
 				7555FF77242A565900829871 /* Sources */,
 				7555FF79242A565900829871 /* Resources */,
 				8881FC71D6CDD91BC267C712 /* Frameworks */,
-				A8126C154858826BDCCAD500 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = iosApp;
+			packageProductDependencies = (
+				CC7B06392969ACD200327CB2 /* SwiftUIDigitalSignature */,
+			);
 			productName = iosApp;
 			productReference = 7555FF7B242A565900829871 /* iosApp.app */;
 			productType = "com.apple.product-type.application";
@@ -175,6 +179,9 @@
 				Base,
 			);
 			mainGroup = 7555FF72242A565900829871;
+			packageReferences = (
+				CC7B06382969ACD200327CB2 /* XCRemoteSwiftPackageReference "swiftui-digital-signature" */,
+			);
 			productRefGroup = 7555FF7C242A565900829871 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -219,23 +226,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A8126C154858826BDCCAD500 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -243,12 +233,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC32B7792944CACA001497E8 /* SignaturePadView.swift in Sources */,
-				CC7B06082968882E00327CB2 /* SignatureView.swift in Sources */,
-				CC32B7772944C4C7001497E8 /* SectionTitleComponent.swift in Sources */,
-				CC32B7762944C4C7001497E8 /* RadioButton.swift in Sources */,
+				CC7B06442969AEFA00327CB2 /* SendEmailViewController.swift in Sources */,
+				CC7B06462969AEFA00327CB2 /* SectionTitleComponent.swift in Sources */,
+				CC7B063D2969AEEE00327CB2 /* FormView.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
-				7555FF83242A565900829871 /* FormView.swift in Sources */,
+				CC7B06452969AEFA00327CB2 /* RadioButton.swift in Sources */,
+				CC7B06472969AEFA00327CB2 /* FormData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,7 +296,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -361,7 +351,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -435,6 +425,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CC7B06382969ACD200327CB2 /* XCRemoteSwiftPackageReference "swiftui-digital-signature" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/globulus/swiftui-digital-signature";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CC7B06392969ACD200327CB2 /* SwiftUIDigitalSignature */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC7B06382969ACD200327CB2 /* XCRemoteSwiftPackageReference "swiftui-digital-signature" */;
+			productName = SwiftUIDigitalSignature;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7555FF73242A565900829871 /* Project object */;
 }

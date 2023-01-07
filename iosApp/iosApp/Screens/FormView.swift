@@ -1,7 +1,10 @@
 import SwiftUI
-import shared
+import SwiftUIDigitalSignature
 
 struct FormView: View {
+    
+    @State private var signature: UIImage? = nil
+    
     
     @State private var isConsent = false
     @State private var amount = ""
@@ -155,18 +158,13 @@ struct FormView: View {
                 .listSectionSeparator(.hidden)
                 
                 Group {
-                    SectionTitleComponent(title: "Signature")
-                    VStack {
-                        Spacer()
-                            .frame(height: 24.0)
-                        TextField("Fait à", text: $date)
-                            .padding(.horizontal)
-                            .background(Color(red: 0.89, green: 0.745, blue: 0.776, opacity: 0.38))
-                        
-                        
-                
+                    Button {
+                        let emailView = SendEmailViewController()
+                        emailView.sendEmail(data: FormData(isConsent: isConsent, amount: amount, amountLettre: amountLettre, name: name, address: address, email: email, phone: phone, bank: bank, agence: agence, rib: rib, month: month, date: date, isPerson: isPerson, signature: signature))
+                    } label: {
+                        Text("Submit")
                     }
-                    .padding(.horizontal)
+                    
                 }
                 .listSectionSeparator(/*@START_MENU_TOKEN@*/.hidden/*@END_MENU_TOKEN@*/)
             }
@@ -179,12 +177,16 @@ struct FormView: View {
                 }
                 
                 ToolbarItem(placement: .primaryAction) {
-                    NavigationLink {
-                        SignatureView()
-                    } label: {
-                        Text("Signer")
+                    NavigationLink("Sign", destination: SignatureView(availableTabs: [.draw],
+                                                                      onSave: { image in
+                        self.signature = image
+                        
+                    }, onCancel: {
+                        
+                    }))
+                    if signature != nil {
+                        Image(uiImage: signature!)
                     }
-
                 }
             }
         }

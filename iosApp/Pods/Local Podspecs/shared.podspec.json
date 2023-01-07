@@ -13,11 +13,6 @@
   "platforms": {
     "ios": "15.0"
   },
-  "dependencies": {
-    "SignaturePad": [
-
-    ]
-  },
   "pod_target_xcconfig": {
     "KOTLIN_PROJECT_PATH": ":shared",
     "PRODUCT_MODULE_NAME": "shared"
