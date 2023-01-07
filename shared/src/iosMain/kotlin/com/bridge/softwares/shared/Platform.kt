@@ -1,4 +1,4 @@
-package com.bridge.softwares.vesos
+package com.bridge.softwares.shared
 
 import platform.UIKit.UIDevice
 

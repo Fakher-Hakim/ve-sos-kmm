@@ -52,7 +52,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.bridge.softwares.vesos"
+    namespace = "com.bridge.softwares.shared"
     compileSdk = 33
     defaultConfig {
         minSdk = 24

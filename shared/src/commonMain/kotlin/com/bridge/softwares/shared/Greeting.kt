@@ -1,4 +1,4 @@
-package com.bridge.softwares.vesos
+package com.bridge.softwares.shared
 
 class Greeting {
     private val platform: Platform = getPlatform()
