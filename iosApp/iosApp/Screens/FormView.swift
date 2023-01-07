@@ -20,7 +20,7 @@ struct FormView: View {
     @State private var date = ""
     @State private var isPerson = true
     
-    @State private var selectedStrength = "Gammarth"
+    @State private var selectedVillage = "Gammarth"
     let strengths = ["Gammarth", "Siliana", "Mahres", "Akouda"]
     
     let personType = ["Person", "Company"]
@@ -57,7 +57,7 @@ struct FormView: View {
                         
                         Text("Je souhaite parrainer parrainer des enfants au village de")
                         
-                        Picker("Village", selection: $selectedStrength) {
+                        Picker("Village", selection: $selectedVillage) {
                             ForEach(strengths, id: \.self) {
                                 Text($0)
                             }
@@ -156,17 +156,6 @@ struct FormView: View {
                     .padding(.horizontal)
                 }
                 .listSectionSeparator(.hidden)
-                
-                Group {
-                    Button {
-                        let emailView = SendEmailViewController()
-                        emailView.sendEmail(data: FormData(isConsent: isConsent, amount: amount, amountLettre: amountLettre, name: name, address: address, email: email, phone: phone, bank: bank, agence: agence, rib: rib, month: month, date: date, isPerson: isPerson, signature: signature))
-                    } label: {
-                        Text("Submit")
-                    }
-                    
-                }
-                .listSectionSeparator(/*@START_MENU_TOKEN@*/.hidden/*@END_MENU_TOKEN@*/)
             }
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
@@ -177,15 +166,24 @@ struct FormView: View {
                 }
                 
                 ToolbarItem(placement: .primaryAction) {
-                    NavigationLink("Sign", destination: SignatureView(availableTabs: [.draw],
-                                                                      onSave: { image in
-                        self.signature = image
-                        
-                    }, onCancel: {
-                        
-                    }))
-                    if signature != nil {
-                        Image(uiImage: signature!)
+                    if(signature == nil) {
+                        NavigationLink("Sign", destination: SignatureView(availableTabs: [.draw],
+                                                                          onSave: { image in
+                            self.signature = image
+                            
+                        }, onCancel: {
+                            
+                        }))
+                        if signature != nil {
+                            Image(uiImage: signature!)
+                        }
+                    } else {
+                        Button {
+                            let emailView = SendEmailViewController()
+                            emailView.sendEmail(data: FormData(isConsent: isConsent, village: selectedVillage, amount: amount, amountLettre: amountLettre, name: name, address: address, email: email, phone: phone, bank: bank, agence: agence, rib: rib, month: month, date: date, isPerson: isPerson, signature: signature))
+                        } label: {
+                            Text("Submit")
+                        }
                     }
                 }
             }

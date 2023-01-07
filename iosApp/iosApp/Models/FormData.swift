@@ -10,6 +10,7 @@ import SwiftUI
 
 struct FormData {
     let isConsent :Bool
+    let village: String
     let amount :String
     let amountLettre :String
     let name :String

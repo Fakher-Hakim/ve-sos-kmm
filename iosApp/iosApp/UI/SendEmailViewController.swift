@@ -10,15 +10,30 @@ import UIKit
 
 class SendEmailViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
+    let NEW_LINE = "\n"
     
     func sendEmail(data: FormData) {
         
-        let recipientEmail = "hakim.fakher@gmail.com"
-        let subject = "Formulaire: VE-SOS"
-        let body = "Merci de ne pas changer le contenu de ce mail\n" +
-        data.name + "\n" +
-        data.email
+        let recipientEmail = "parrainage.enfants@sos-tunisie.org"
+        let subject = "SOS-VE formulaire"
+        let body = "Merci de ne pas changer le contenu de ce mail\n"
+       
+        + "----\n" +
         
+        "Banque: " + data.bank + NEW_LINE +
+        "Agence: " + data.agence + NEW_LINE +
+        "RIB: " + data.rib + NEW_LINE +
+        "Mois de prelevement: ${monthSpinner.selectedItem}" + NEW_LINE +
+        "Mois de prelevement: 2023"  + data.month + NEW_LINE
+        "Annee de prelevement: 2023"  + NEW_LINE +
+        
+        "----\n" +
+        
+        "Montant: " + data.amount + NEW_LINE +
+        "En lettre: " + data.amountLettre + NEW_LINE +
+        "Village: " + data.village
+        
+        print(body)
         // Show default mail composer
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
