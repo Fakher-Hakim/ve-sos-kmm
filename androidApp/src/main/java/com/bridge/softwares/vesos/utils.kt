@@ -17,23 +17,23 @@ fun shareEmail(
     attachmentPath: String,
     onError: ((Exception) -> Unit)? = null
 ) {
-    val file = File(attachmentPath)
-    if (!file.exists() || !file.canRead()) {
-        onError?.invoke(IOException())
-    }
-    val signature = Uri.fromFile(file)
-
-    val shareIntent = Intent.createChooser(
-        Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:")).apply {
-            putExtra(Intent.EXTRA_EMAIL, addresses)
-            putExtra(Intent.EXTRA_CC, cc)
-            putExtra(Intent.EXTRA_SUBJECT, subject)
-            putExtra(Intent.EXTRA_TEXT, body)
-            putExtra(Intent.EXTRA_STREAM, signature)
-        }, subject
-    )
-
     try {
+        val file = File(attachmentPath)
+        if (!file.exists() || !file.canRead()) {
+            onError?.invoke(IOException())
+        }
+        val signature = Uri.fromFile(file)
+
+        val shareIntent = Intent.createChooser(
+            Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:")).apply {
+                putExtra(Intent.EXTRA_EMAIL, addresses)
+                putExtra(Intent.EXTRA_CC, cc)
+                putExtra(Intent.EXTRA_SUBJECT, subject)
+                putExtra(Intent.EXTRA_TEXT, body)
+                putExtra(Intent.EXTRA_STREAM, signature)
+            }, subject
+        )
+
         context.startActivity(shareIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
     } catch (ex: ActivityNotFoundException) {
         // No email apps installed in the phone

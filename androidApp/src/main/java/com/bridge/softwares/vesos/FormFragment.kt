@@ -60,7 +60,7 @@ class FormFragment : Fragment() {
                 Snackbar.make(binding.root, "Veuillez saisie tous les champs obligatoire", LENGTH_LONG).show()
                 return@setOnClickListener
             }
-            PermissionsUtils.checkAndRequestPermissions(requireActivity())
+
             if (PermissionsUtils.hasPermissions(requireActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)) {
                 submitForm()
             } else {

@@ -52,7 +52,7 @@ object PermissionsUtils {
             ) {
                 Toast.makeText(
                     activity,
-                    "Write permission is needed to create Excel file ",
+                    "Write permission is needed to create Signature Image",
                     Toast.LENGTH_SHORT
                 ).show()
                 // Show an explanation to the user *asynchronously* -- don't
