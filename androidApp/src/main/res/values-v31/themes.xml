@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="SplashTheme" parent="Theme.SplashScreen">
+        <item name="postSplashScreenTheme">@style/Theme.SosVE.NoActionBar</item>
+        <item name="windowSplashScreenBackground">@color/primary</item>
+        <item name="android:windowSplashScreenAnimationDuration">1000</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_logo</item>
+        <item name="android:windowSplashScreenBrandingImage">@drawable/bridge_softwares_branding_asset</item>
+    </style>
+
+</resources>

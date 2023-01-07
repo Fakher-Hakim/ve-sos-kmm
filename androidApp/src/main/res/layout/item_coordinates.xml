@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    >
+
+    <TextView
+        android:id="@+id/coordinateHeader"
+        style="@style/SectionHeaderText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        android:text="@string/coordinates_header"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/coordinates_header"
+        />
+
+    <RadioGroup
+        android:id="@+id/checkBoxPersonType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coordinateHeader"
+        >
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/personnePhysiqueCheckBox"
+            style="@style/CheckboxStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/person_physique"
+            />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/personneMoraleCheckBox"
+            style="@style/CheckboxStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/societe"
+            />
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/personnePhysiqueCoordinateForm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxPersonType"
+        tools:visibility="visible"
+        >
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/white"
+            android:hint="@string/name_lastname_label"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/InputTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/profession"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/white"
+            android:hint="@string/profession_label"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/InputTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/adress_person"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/white"
+            android:hint="@string/address_label"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/InputTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/mail_person"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/white"
+            android:hint="@string/e_mail_label"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/InputTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:inputType="textEmailAddress"
+                >
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/telephone_person"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/white"
+            android:hint="@string/telephone_label"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/InputTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:maxLength="8"
+                >
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/personneMoraleCoordinateForm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxPersonType"
+        tools:visibility="gone"
+        >
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/raison_social"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/white"
+            android:hint="@string/raison_sociale"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/InputTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/matricule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/white"
+            android:hint="@string/matricule_fiscale"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/InputTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/responsable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/white"
+            android:hint="@string/premier_responsable"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/InputTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/adress_moral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/white"
+            android:hint="@string/address_label"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/InputTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                >
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/mail_moral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/e_mail_label"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/InputTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:inputType="phone"
+                >
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tel_moral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/telephone_label"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/InputTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:maxLength="8"
+                >
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

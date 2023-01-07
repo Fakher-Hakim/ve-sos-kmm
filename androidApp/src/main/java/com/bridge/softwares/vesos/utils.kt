@@ -1,11 +1,12 @@
 package com.bridge.softwares.vesos
 
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import android.util.Log
 import java.io.File
 import java.io.IOException
+
 
 fun shareEmail(
     context: Context,
@@ -14,7 +15,7 @@ fun shareEmail(
     cc: Array<String>? = null,
     body: String,
     attachmentPath: String,
-    onError: ((Exception) -> Unit)? = null,
+    onError: ((Exception) -> Unit)? = null
 ) {
     val file = File(attachmentPath)
     if (!file.exists() || !file.canRead()) {
@@ -34,9 +35,10 @@ fun shareEmail(
 
     try {
         context.startActivity(shareIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
-    } catch (ex: Exception) {
+    } catch (ex: ActivityNotFoundException) {
         // No email apps installed in the phone
         onError?.invoke(ex)
-        Log.e("MAIL SHARE EXCEPTION", "cannot send mail: ${ex.message}")
+    } catch (ex: RuntimeException) {
+        onError?.invoke(ex)
     }
 }

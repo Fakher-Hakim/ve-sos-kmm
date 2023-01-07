@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    >
+
+    <TextView
+        android:id="@+id/consentHeader"
+        style="@style/SectionHeaderText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        android:text="@string/consent_header"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/consentCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/barlow_regular"
+        android:text="Oui, en tant que Parrain ou Marraine SOS\nJe souhaite participer à la prise en charge des enfants\n sans soutien familiale pour leur offrir un foyer chaleureux, une education de qualite \net un avenir meilleur."
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/consentHeader"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/montant"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/white"
+        android:hint="@string/en_donnant"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="@id/consentCheckBox"
+        app:layout_constraintTop_toBottomOf="@id/consentCheckBox"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/InputTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/numeric_main"
+            android:inputType="number"
+            android:maxLength="4"
+            >
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="0.35"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/montant_lettre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/white"
+        android:hint="@string/en_lettre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/consentCheckBox"
+        app:layout_constraintTop_toTopOf="@id/montant"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/InputTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/choiceTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/barlow_regular"
+        android:text="Je souhaite parrainer des enfants au village de:"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/montant"
+        app:layout_constraintTop_toBottomOf="@id/montant_lettre"
+        />
+
+    <RadioGroup
+        android:id="@+id/checkBoxVille"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/choiceTitleText"
+        >
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_bold"
+            android:text="Gammarth"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_bold"
+            android:text="Siliana"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_bold"
+            android:text="Mahres"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_bold"
+            android:text="Akouda"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            />
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

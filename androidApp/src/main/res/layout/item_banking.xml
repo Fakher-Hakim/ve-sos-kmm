@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    >
+
+    <TextView
+        android:id="@+id/bankingHeader"
+        style="@style/SectionHeaderText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        android:text="@string/banking_header"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/banking_header"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/banque_text_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/white"
+        android:hint="@string/banque"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/agence_text_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bankingHeader"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/InputTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/agence_text_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/white"
+        android:hint="@string/agence"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/banque_text_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/banque_text_layout"
+        app:layout_constraintTop_toTopOf="@id/banque_text_layout"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/InputTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/rib_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/barlow_regular"
+        android:text="@string/rib_label"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/banque_text_layout"
+        app:layout_constraintTop_toBottomOf="@id/banque_text_layout"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/rib"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/white"
+        android:hint="@string/rib_hint"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/rib_label"
+        app:layout_constraintEnd_toStartOf="@+id/rib_separator"
+        app:layout_constraintStart_toEndOf="@id/rib_label"
+        app:layout_constraintTop_toTopOf="@+id/rib_label"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/InputTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/numeric_main"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="18"
+            >
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/rib_separator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/barlow_regular"
+        android:text="/"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/rib_label"
+        app:layout_constraintEnd_toStartOf="@+id/rib_division"
+        app:layout_constraintTop_toTopOf="@+id/rib_label"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/rib_division"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/white"
+        android:hint="00"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/rib"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/rib"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/InputTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/numeric_main"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="2"
+            >
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/barlow_bold"
+        android:text="@string/premier_mois_de_prelevement"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/rib_label"
+        app:layout_constraintTop_toBottomOf="@id/rib"
+        />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/monthSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="@color/accentSecondary"
+        android:entries="@array/months"
+        app:layout_constraintBottom_toBottomOf="@id/year"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@id/year"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/year"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@color/white"
+        android:hint="2023"
+        app:layout_constraintStart_toEndOf="@id/monthSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/InputTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/numeric_main"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="4"
+            >
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

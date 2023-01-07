@@ -1,25 +1,40 @@
 package com.bridge.softwares.vesos
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.Surface
-import androidx.compose.ui.Modifier
-import com.bridge.softwares.vesos.theme.VETheme
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
+import com.bridge.softwares.vesos.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            VETheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = VETheme.colors.surface
-                ) {
-                    FormScreen()
-                }
-            }
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        setSupportActionBar(binding.toolbar)
+
+        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        appBarConfiguration = AppBarConfiguration(navController.graph)
+        setupActionBarWithNavController(navController, appBarConfiguration)
+
+        binding.fab.setOnClickListener { view ->
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        return navController.navigateUp(appBarConfiguration)
+                || super.onSupportNavigateUp()
     }
 }

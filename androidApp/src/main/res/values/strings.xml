@@ -1,11 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">VESOS</string>
+    <string name="app_name">SOS VE</string>
     <!-- Strings used for fragments for navigation -->
     <string name="form_fragment_label">Formulaire</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
 
-    <string name="consent_header">Autorisation de prélévement permanent</string>
-    <string name="consent_description">Oui, en tant que parrain ou marrain SOS, Je souhaite participer à la prise en chargedes enfants sans soutien familiale pour leur offrir un foyer chaleureux, une education de qualité et un avenir meilleur.</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="consent_header">Autorisation de prelevement permanent</string>
     <string name="coordinates_header">Mes coordonees</string>
     <string name="societe">Société</string>
     <string name="person_physique">Personne physique</string>
