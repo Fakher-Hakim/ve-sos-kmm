@@ -1,9 +1,7 @@
 package com.bridge.softwares.vesos
 
-import android.Manifest
 import android.graphics.Bitmap
 import android.os.Bundle
-import android.os.Environment
 import android.text.TextUtils
 import android.util.Patterns
 import android.view.LayoutInflater
@@ -16,16 +14,11 @@ import com.bridge.softwares.shared.DataProvider
 import com.bridge.softwares.shared.FormDataModel
 import com.bridge.softwares.vesos.databinding.FragmentFormBinding
 import com.bridge.softwares.vesos.utils.ImageUtil
-import com.bridge.softwares.vesos.utils.PermissionsUtils
 import com.bridge.softwares.vesos.utils.shareEmail
 import com.github.gcacace.signaturepad.views.SignaturePad
 import com.google.android.material.snackbar.BaseTransientBottomBar.LENGTH_LONG
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
-import java.io.File
-import java.io.FileNotFoundException
-import java.io.FileOutputStream
-import java.io.IOException
 
 
 /**
@@ -52,41 +45,31 @@ class FormFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        PermissionsUtils.checkAndRequestPermissions(requireActivity())
 
         setEventsCoordinateLayout()
 
         setEventsSignatureLayout()
 
         binding.submit.setOnClickListener {
-            if (!checkInputValid()) {
-                Snackbar.make(binding.root, "Veuillez saisie tous les champs obligatoire", LENGTH_LONG).show()
-                return@setOnClickListener
-            }
-
-            if (PermissionsUtils.hasPermissions(requireActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)) {
-                submitForm()
-            } else {
-                PermissionsUtils.requestWriteExternalPermission(requireActivity())
-            }
+//            if (!checkInputValid()) {
+//                Snackbar.make(binding.root, "Veuillez saisie tous les champs obligatoire", LENGTH_LONG).show()
+//                return@setOnClickListener
+//            }
+            submitForm()
         }
     }
 
     private fun submitForm() {
-        signatureBitmap?.let { bitmap ->
-            val filePath = saveBitmap(bitmap, "${System.currentTimeMillis()}.png")
-            binding.signatureView.signaturePad.clear()
-            shareEmail(
-                requireActivity(),
-                "SOS-VE formulaire",
-                listOf("parrainage.enfants@sos-tunisie.org").toTypedArray(),
-                null,
-                buildMailHtmlBody(),
-                filePath
-            ) {
-                Snackbar.make(binding.root, "Une erreur est survenue, veuillez reessayer", LENGTH_LONG)
-                    .show()
-            }
+        binding.signatureView.signaturePad.clear()
+        shareEmail(
+            requireActivity(),
+            "SOS-VE formulaire",
+            listOf("parrainage.enfants@sos-tunisie.org").toTypedArray(),
+            null,
+            buildMailHtmlBody(),
+        ) {
+            Snackbar.make(binding.root, "Une erreur est survenue, veuillez reessayer", LENGTH_LONG)
+                .show()
         }
     }
 
@@ -270,33 +253,6 @@ class FormFragment : Fragment() {
                 binding.coordinateView.personnePhysiqueCoordinateForm.visibility = View.GONE
             }
         }
-    }
-
-    private fun saveBitmap(
-        bitmap: Bitmap,
-        fileNameWithExtension: String,
-    ): String {
-        val externalStoragePath =
-            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString()
-        val dir = File(externalStoragePath)
-        dir.mkdirs()
-
-        val file = File(dir, fileNameWithExtension)
-        if (file.exists()) file.delete()
-        try {
-            val outputStream = FileOutputStream(file)
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
-            outputStream.flush()
-            outputStream.close()
-            return file.absolutePath
-        } catch (e: FileNotFoundException) {
-            e.printStackTrace()
-        } catch (e: IOException) {
-            e.printStackTrace()
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-        return ""
     }
 
     override fun onDestroyView() {
