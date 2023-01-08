@@ -16,7 +16,6 @@
 		CC7B06442969AEFA00327CB2 /* SendEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B063F2969AEFA00327CB2 /* SendEmailViewController.swift */; };
 		CC7B06452969AEFA00327CB2 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B06402969AEFA00327CB2 /* RadioButton.swift */; };
 		CC7B06462969AEFA00327CB2 /* SectionTitleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B06412969AEFA00327CB2 /* SectionTitleComponent.swift */; };
-		CC7B06472969AEFA00327CB2 /* FormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B06432969AEFA00327CB2 /* FormData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +31,6 @@
 		CC7B063F2969AEFA00327CB2 /* SendEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendEmailViewController.swift; sourceTree = "<group>"; };
 		CC7B06402969AEFA00327CB2 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		CC7B06412969AEFA00327CB2 /* SectionTitleComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTitleComponent.swift; sourceTree = "<group>"; };
-		CC7B06432969AEFA00327CB2 /* FormData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +92,6 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
-				CC7B06422969AEFA00327CB2 /* Models */,
 				CC7B063E2969AEFA00327CB2 /* UI */,
 				CC7B063B2969AEEE00327CB2 /* Screens */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
@@ -121,14 +118,6 @@
 				CC7B06412969AEFA00327CB2 /* SectionTitleComponent.swift */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		CC7B06422969AEFA00327CB2 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				CC7B06432969AEFA00327CB2 /* FormData.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,7 +227,6 @@
 				CC7B063D2969AEEE00327CB2 /* FormView.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				CC7B06452969AEFA00327CB2 /* RadioButton.swift in Sources */,
-				CC7B06472969AEFA00327CB2 /* FormData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

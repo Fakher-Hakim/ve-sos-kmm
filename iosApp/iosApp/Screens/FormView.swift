@@ -180,8 +180,32 @@ struct FormView: View {
                         }
                     } else {
                         Button {
-                            let body = EmailBodyProvider().getMailBody(formDataModel: FormDataModel(name:"aa"))
-                            print(body)
+                            let data = FormDataModel(
+                                isPerson: false,
+                                amount: amount,
+                                amountLetter: amountLettre,
+                                village: "",
+                                name: "",
+                                address: "",
+                                profession: "",
+                                email: "",
+                                phone: "",
+                                raisonSocial: "",
+                                matricule: "",
+                                premierResponsable: "",
+                                bank: "",
+                                agence: "",
+                                rib: "",
+                                month: "",
+                                faitA: "",
+                                signatureBase64: signature?.jpegData(compressionQuality: 0.75)?.base64EncodedString() ?? ""
+                            )
+                            let mailBody = DataProvider().getMailBodyHtml(formDataModel: data)
+                            print("\(mailBody)")
+                            
+                            let emailComposer = SendEmailViewController()
+                            emailComposer.sendEmail(body: mailBody)
+                
                         } label: {
                             Text("Submit")
                         }
