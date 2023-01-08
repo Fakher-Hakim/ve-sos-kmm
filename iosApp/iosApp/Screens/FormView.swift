@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftUIDigitalSignature
+import shared
 
 struct FormView: View {
     
@@ -179,8 +180,8 @@ struct FormView: View {
                         }
                     } else {
                         Button {
-                            let emailView = SendEmailViewController()
-                            emailView.sendEmail(data: FormData(isConsent: isConsent, village: selectedVillage, amount: amount, amountLettre: amountLettre, name: name, address: address, email: email, phone: phone, bank: bank, agence: agence, rib: rib, month: month, date: date, isPerson: isPerson, signature: signature))
+                            let body = EmailBodyProvider().getMailBody(formDataModel: FormDataModel(name:"aa"))
+                            print(body)
                         } label: {
                             Text("Submit")
                         }

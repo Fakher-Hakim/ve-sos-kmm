@@ -1,4 +1,4 @@
-package com.bridge.softwares.vesos
+package com.bridge.softwares.vesos.utils
 
 import android.Manifest
 import android.app.Activity

@@ -12,7 +12,12 @@ import android.view.ViewGroup
 import android.widget.RadioButton
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
+import com.bridge.softwares.shared.DataProvider
+import com.bridge.softwares.shared.FormDataModel
 import com.bridge.softwares.vesos.databinding.FragmentFormBinding
+import com.bridge.softwares.vesos.utils.ImageUtil
+import com.bridge.softwares.vesos.utils.PermissionsUtils
+import com.bridge.softwares.vesos.utils.shareEmail
 import com.github.gcacace.signaturepad.views.SignaturePad
 import com.google.android.material.snackbar.BaseTransientBottomBar.LENGTH_LONG
 import com.google.android.material.snackbar.Snackbar
@@ -21,8 +26,6 @@ import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
 import java.io.IOException
-import java.text.SimpleDateFormat
-import java.util.*
 
 
 /**
@@ -78,7 +81,7 @@ class FormFragment : Fragment() {
                 "SOS-VE formulaire",
                 listOf("parrainage.enfants@sos-tunisie.org").toTypedArray(),
                 null,
-                buildBody(),
+                buildMailHtmlBody(),
                 filePath
             ) {
                 Snackbar.make(binding.root, "Une erreur est survenue, veuillez reessayer", LENGTH_LONG)
@@ -189,45 +192,30 @@ class FormFragment : Fragment() {
         } ?: return false
     }
 
-    private fun buildBody(): String {
-        var body = ""
-
-        with(binding.coordinateView) {
-            if (personneMoraleCheckBox.isChecked) {
-                body += "Type personne: Morale" + NEW_LINE +
-                        "Raison Social: ${raisonSocial.editText?.text}" + NEW_LINE +
-                        "Matricule fiscale: ${matricule.editText?.text}" + NEW_LINE +
-                        "Premier Responsable: ${responsable.editText?.text}" + NEW_LINE +
-                        "Adresse: ${adressMoral.editText?.text}" + NEW_LINE +
-                        "E-Mail: ${mailMoral.editText?.text}" + NEW_LINE
-                "Tel: ${telMoral.editText?.text}" + NEW_LINE
-            } else {
-                body += "Type personne: Physique" + NEW_LINE +
-                        "Nom, Prenom: ${name.editText?.text}" + NEW_LINE +
-                        "Profession: ${profession.editText?.text}" + NEW_LINE +
-                        "Adresse: ${adressPerson.editText?.text}" + NEW_LINE +
-                        "E-Mail: ${mailPerson.editText?.text}" + NEW_LINE
-                "Tel: ${telephonePerson.editText?.text}" + NEW_LINE
-            }
-        }
-        with(binding.bankingView) {
-            body += "Banque: ${banqueTextLayout.editText?.text}" + NEW_LINE +
-                    "Agence: ${agenceTextLayout.editText?.text}" + NEW_LINE +
-                    "RIB: ${rib.editText?.text}" + NEW_LINE +
-                    "RIB / division: ${ribDivision.editText?.text}" + NEW_LINE +
-                    "Mois de prelevement: ${monthSpinner.selectedItem}" + NEW_LINE +
-                    "Annee de prelevement: ${year.editText?.text}" + NEW_LINE
-        }
-        with(binding.signatureView) {
-            body += "Fait à: ${faitA.editText?.text}" + NEW_LINE +
-                    "Le: ${le.editText?.text}" + NEW_LINE
-        }
-        with(binding.consentView) {
-            body += "Montant: ${montant.editText?.text}" + NEW_LINE +
-                    "En lettre: ${montantLettre.editText?.text}" + NEW_LINE +
-                    "Village: ${getSelectedVillage()}"
-        }
-        return body
+    private fun buildMailHtmlBody(): String {
+        val isPerson = binding.coordinateView.personnePhysiqueCheckBox.isChecked
+        return DataProvider().getMailBodyHtml(
+            FormDataModel(
+                isPerson = isPerson,
+                amount = binding.consentView.montant.editText?.text.toString(),
+                amountLetter = binding.consentView.montantLettre.editText?.text.toString(),
+                village = getSelectedVillage().orEmpty(),
+                name = binding.coordinateView.name.editText?.text.toString(),
+                address = if (isPerson) binding.coordinateView.adressPerson.editText?.text.toString() else binding.coordinateView.adressMoral.editText?.text.toString(),
+                profession = binding.coordinateView.profession.editText?.text.toString(),
+                email = if (isPerson) binding.coordinateView.mailPerson.editText?.text.toString() else binding.coordinateView.mailMoral.editText?.text.toString(),
+                phone = binding.coordinateView.telephonePerson.editText?.text.toString(),
+                raisonSocial = binding.coordinateView.raisonSocial.editText?.text.toString(),
+                matricule = binding.coordinateView.matricule.editText?.text.toString(),
+                premierResponsable = binding.coordinateView.responsable.editText?.text.toString(),
+                bank = binding.bankingView.banqueTextLayout.editText?.text.toString(),
+                agence = binding.bankingView.agenceTextLayout.editText?.text.toString(),
+                rib = "${binding.bankingView.rib.editText?.text.toString()} / ${binding.bankingView.ribDivision.editText?.text.toString()}",
+                month = binding.bankingView.monthSpinner.selectedItem.toString(),
+                faitA = binding.signatureView.faitA.editText?.text.toString(),
+                signatureBase64 = signatureBitmap?.let { ImageUtil.convert(it) }.orEmpty(),
+            )
+        )
     }
 
     private fun setEventsSignatureLayout() {
@@ -249,10 +237,7 @@ class FormFragment : Fragment() {
             }
         })
 
-        val calendar = Calendar.getInstance()
-        val myFormat = "dd/MM/yyyy"
-        val dateFormat = SimpleDateFormat(myFormat, Locale.getDefault())
-        binding.signatureView.leEditText.setText(dateFormat.format(calendar.time))
+        binding.signatureView.leEditText.setText(DataProvider().getToday())
     }
 
     private fun getSelectedVillage(): String? {

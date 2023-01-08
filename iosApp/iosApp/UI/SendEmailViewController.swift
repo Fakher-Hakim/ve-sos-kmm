@@ -17,7 +17,7 @@ class SendEmailViewController: UIViewController, MFMailComposeViewControllerDele
         let recipientEmail = "parrainage.enfants@sos-tunisie.org"
         let subject = "SOS-VE formulaire"
         let body = "Merci de ne pas changer le contenu de ce mail\n"
-       
+        
         + "----\n" +
         
         "Banque: " + data.bank + NEW_LINE +
@@ -42,7 +42,10 @@ class SendEmailViewController: UIViewController, MFMailComposeViewControllerDele
             mail.setSubject(subject)
             mail.setMessageBody(body, isHTML: false)
             
-            present(mail, animated: true)
+            let imageData: Data = (data.signature ?? UIImage()).pngData()!
+            mail.addAttachmentData(imageData as Data, mimeType: "image/png", fileName: "sos_ve_signature.png")
+            
+            present(mail, animated: true, completion: nil)
             
             // Show third party email composer if default Mail app is not present
         } else if let emailUrl = createEmailUrl(to: recipientEmail, subject: subject, body: body) {

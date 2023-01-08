@@ -20,9 +20,17 @@ kotlin {
             baseName = "shared"
         }
     }
-    
+
+    val dateTimeVersion = "0.4.0"
+
     sourceSets {
-        val commonMain by getting
+        val commonMain by getting {
+            dependencies {
+
+                //dates
+                implementation("org.jetbrains.kotlinx:kotlinx-datetime:$dateTimeVersion")
+            }
+        }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))

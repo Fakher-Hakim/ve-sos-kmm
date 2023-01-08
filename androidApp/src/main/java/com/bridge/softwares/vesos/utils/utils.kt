@@ -1,9 +1,16 @@
-package com.bridge.softwares.vesos
+package com.bridge.softwares.vesos.utils
 
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
+import android.text.Html
+import android.text.Html.ImageGetter
+import android.util.Base64
+import androidx.core.text.HtmlCompat
 import java.io.File
 import java.io.IOException
 
@@ -29,9 +36,20 @@ fun shareEmail(
                 putExtra(Intent.EXTRA_EMAIL, addresses)
                 putExtra(Intent.EXTRA_CC, cc)
                 putExtra(Intent.EXTRA_SUBJECT, subject)
-                putExtra(Intent.EXTRA_TEXT, body)
-                putExtra(Intent.EXTRA_STREAM, signature)
-            }, subject
+                putExtra(
+                    Intent.EXTRA_TEXT, Html.fromHtml(
+                        body,
+                        HtmlCompat.FROM_HTML_MODE_LEGACY,
+                        { source ->
+                            val data: ByteArray = Base64.decode(source, Base64.DEFAULT)
+                            val bitmap: Bitmap = BitmapFactory.decodeByteArray(data, 0, data.size)
+                            BitmapDrawable(context.resources, bitmap)
+                        },
+                        null
+                    )
+                )
+            },
+            subject
         )
 
         context.startActivity(shareIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
