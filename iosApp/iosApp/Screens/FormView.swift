@@ -6,11 +6,14 @@ struct FormView: View {
     
     @State private var signature: UIImage? = nil
     
-    
     @State private var isConsent = false
     @State private var amount = ""
     @State private var amountLettre = ""
     @State private var name = ""
+    @State private var profession = ""
+    @State private var raisonSociale = ""
+    @State private var matriculeFiscale = ""
+    @State private var premierResponsable = ""
     @State private var address = ""
     @State private var email = ""
     @State private var phone = ""
@@ -19,12 +22,18 @@ struct FormView: View {
     @State private var rib = ""
     @State private var month = ""
     @State private var date = ""
+    @State private var faitA = ""
     @State private var isPerson = true
     
-    @State private var selectedVillage = "Gammarth"
-    let strengths = ["Gammarth", "Siliana", "Mahres", "Akouda"]
+    @State private var selectedVillage = "Mahres"
+    let villages = ["Gammarth", "Siliana", "Mahres", "Akouda"]
+    
+    @State private var selectedMonth = "Juin"
+    let months = ["Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre"]
     
     let personType = ["Person", "Company"]
+    
+    @State private var showingAlert = false
     
     var body: some View {
         NavigationView {
@@ -59,7 +68,7 @@ struct FormView: View {
                         Text("Je souhaite parrainer parrainer des enfants au village de")
                         
                         Picker("Village", selection: $selectedVillage) {
-                            ForEach(strengths, id: \.self) {
+                            ForEach(villages, id: \.self) {
                                 Text($0)
                             }
                         }
@@ -92,16 +101,41 @@ struct FormView: View {
                         Spacer()
                             .frame(height: 24.0)
                         
-                        TextField("Nom et prénom", text: $name)
-                            .padding(.horizontal)
-                            .background(Color(red: 0.89, green: 0.745, blue: 0.776, opacity: 0.38))
-                        
-                        Spacer()
-                            .frame(height: 24.0)
-                        
-                        TextField("Adresse", text: $address)
-                            .padding(.horizontal)
-                            .background(Color(red: 0.89, green: 0.745, blue: 0.776, opacity: 0.38))
+                        if (isPerson) {
+                            VStack {
+                                TextField("Nom et prénom", text: $name)
+                                    .padding(.horizontal)
+                                    .background(Color(red: 0.89, green: 0.745, blue: 0.776, opacity: 0.38))
+                                
+                                Spacer()
+                                    .frame(height: 24.0)
+                                
+                                TextField("Adresse", text: $address)
+                                    .padding(.horizontal)
+                                    .background(Color(red: 0.89, green: 0.745, blue: 0.776, opacity: 0.38))
+                            }
+                        } else {
+                            
+                            VStack {
+                                TextField("Raison Sociale", text: $raisonSociale)
+                                    .padding(.horizontal)
+                                    .background(Color(red: 0.89, green: 0.745, blue: 0.776, opacity: 0.38))
+                                
+                                Spacer()
+                                    .frame(height: 24.0)
+                                
+                                TextField("Matricule Fiscale", text: $matriculeFiscale)
+                                    .padding(.horizontal)
+                                    .background(Color(red: 0.89, green: 0.745, blue: 0.776, opacity: 0.38))
+                                
+                                Spacer()
+                                    .frame(height: 24.0)
+                                
+                                TextField("Premier Responsable", text: $premierResponsable)
+                                    .padding(.horizontal)
+                                    .background(Color(red: 0.89, green: 0.745, blue: 0.776, opacity: 0.38))
+                            }
+                        }
                         
                         Spacer()
                             .frame(height: 24.0)
@@ -152,7 +186,16 @@ struct FormView: View {
                             .frame(height: 24.0)
                         
                         Text("Premier mois de prélévement")
-                        //TODO month picker.
+                        Picker("Village", selection: $selectedMonth) {
+                            ForEach(months, id: \.self) {
+                                Text($0)
+                            }
+                        }
+                        .pickerStyle(.wheel)
+                        
+                        TextField("Fait A", text: $faitA)
+                            .padding(.horizontal)
+                            .background(Color(red: 0.89, green: 0.745, blue: 0.776, opacity: 0.38))
                     }
                     .padding(.horizontal)
                 }
@@ -181,43 +224,59 @@ struct FormView: View {
                     } else {
                         Button {
                             let data = FormDataModel(
-                                isPerson: false,
+                                isPerson: isPerson,
                                 amount: amount,
                                 amountLetter: amountLettre,
-                                village: "",
-                                name: "",
-                                address: "",
-                                profession: "",
-                                email: "",
-                                phone: "",
-                                raisonSocial: "",
-                                matricule: "",
-                                premierResponsable: "",
-                                bank: "",
-                                agence: "",
-                                rib: "",
-                                month: "",
-                                faitA: "",
+                                village: selectedVillage,
+                                name: name,
+                                address: address,
+                                profession: profession,
+                                email: email,
+                                phone: phone,
+                                raisonSocial: raisonSociale,
+                                matricule: matriculeFiscale,
+                                premierResponsable: premierResponsable,
+                                bank: bank,
+                                agence: agence,
+                                rib: rib,
+                                month: month,
+                                faitA: faitA,
                                 signatureBase64: signature?.jpegData(compressionQuality: 0.75)?.base64EncodedString() ?? ""
                             )
-                            let mailBody = DataProvider().getMailBodyHtml(formDataModel: data)
-                            print("\(mailBody)")
                             
-                            let emailComposer = SendEmailViewController()
-                            emailComposer.sendEmail(body: mailBody)
-                
+                            if (isValid()) {
+                                showingAlert = false
+                                
+                                let mailBody = DataProvider().getMailBodyHtml(formDataModel: data)
+                                print("\(mailBody)")
+                                
+                                let emailComposer = SendEmailViewController()
+                                emailComposer.sendEmail(body: mailBody)
+                            } else {
+                                showingAlert = true
+                            }
+                            
                         } label: {
                             Text("Submit")
+                        }.alert("Veuillez remplir tous les champs SVP.", isPresented: $showingAlert) {
+                            Button("OK", role: .cancel) { }
                         }
                     }
                 }
             }
         }
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        FormView()
+    
+    private func isValid() -> Bool {
+        if (!isConsent || faitA.isEmpty || amount.isEmpty || amountLettre.isEmpty || bank.isEmpty || agence.isEmpty || rib.isEmpty || email.isEmpty || address.isEmpty) {
+            return false
+        }
+        return true
     }
 }
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            FormView()
+        }
+    }
