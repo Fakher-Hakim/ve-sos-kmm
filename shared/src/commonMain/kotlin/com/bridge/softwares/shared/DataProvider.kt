@@ -7,7 +7,7 @@ import kotlinx.datetime.todayIn
 class DataProvider {
 
     fun getMailBodyHtml(formDataModel: FormDataModel): String {
-        var body = "<!DOCTYPE html>\n" +
+        return "<!DOCTYPE html>\n" +
                 "<html>\n" +
                 "<body>\n" +
                 addHtmlLine("Montant", formDataModel.amount) +
@@ -21,13 +21,10 @@ class DataProvider {
                 addHtmlLine("Le", getToday()) +
                 getCoordonateData(formDataModel) +
                 "<br>" +
-                "<br>" +
                 "<h1>Signature:</h1>" +
-                "<br>" +
                 "<img src=data:image/png;base64,${formDataModel.signatureBase64}>" +
                 "</body>\n" +
                 "</html>\n"
-        return body
     }
 
     private fun getCoordonateData(formDataModel: FormDataModel): String {
@@ -48,7 +45,7 @@ class DataProvider {
     }
 
     private fun addHtmlLine(title: String, value: String) =
-        "<h1>$title : </h1> <p>$value</p> <br>"
+        "<h1>$title:</h1><p>$value</p><br>"
 
     fun getToday(): String {
         return Clock.System.todayIn(TimeZone.currentSystemDefault()).toString()
