@@ -18,6 +18,8 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>googlegmail</string>
@@ -34,10 +36,10 @@
 	</dict>
 	<key>UILaunchScreen</key>
 	<dict>
-		<key>UIImageName</key>
-		<string>ic_logo</string>
 		<key>UIColorName</key>
 		<string>ve_blue</string>
+		<key>UIImageName</key>
+		<string>ic_logo</string>
 	</dict>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
