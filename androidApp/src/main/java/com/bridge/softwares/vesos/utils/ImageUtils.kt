@@ -17,7 +17,7 @@ object ImageUtil {
 
     fun convert(bitmap: Bitmap): String {
         val outputStream = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 75, outputStream)
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 25, outputStream)
         return Base64.encodeToString(outputStream.toByteArray(), Base64.NO_WRAP)
     }
 }

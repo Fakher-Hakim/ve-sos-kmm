@@ -51,10 +51,10 @@ class FormFragment : Fragment() {
         setEventsSignatureLayout()
 
         binding.submit.setOnClickListener {
-//            if (!checkInputValid()) {
-//                Snackbar.make(binding.root, "Veuillez saisie tous les champs obligatoire", LENGTH_LONG).show()
-//                return@setOnClickListener
-//            }
+            if (!checkInputValid()) {
+                Snackbar.make(binding.root, "Veuillez saisir tous les champs obligatoire", LENGTH_LONG).show()
+                return@setOnClickListener
+            }
             submitForm()
         }
     }

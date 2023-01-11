@@ -1,6 +1,6 @@
 ENV['SWIFT_VERSION'] = '5'
 
-target 'iosApp' do
+target 'VE SOS' do
   use_frameworks!
   platform :ios, '15.0'
   pod 'shared', :path => '../shared'
