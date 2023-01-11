@@ -241,7 +241,7 @@ struct FormView: View {
                                 rib: rib,
                                 month: month,
                                 faitA: faitA,
-                                signatureBase64: signature?.jpegData(compressionQuality: 0.75)?.base64EncodedString() ?? ""
+                                signatureBase64: signature?.jpegData(compressionQuality: 0.25)?.base64EncodedString() ?? ""
                             )
                             
                             if (isValid()) {

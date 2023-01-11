@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "36688188233",
+    "project_id": "ve-sos-kmm",
+    "storage_bucket": "ve-sos-kmm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:36688188233:android:27e0bd8a4a42a794efc098",
+        "android_client_info": {
+          "package_name": "com.bridge.softwares.vesos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "36688188233-f62kgb4e00321mlqfuub5ho9kqnfvfui.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6KGbMI-iQl4l5m1NjrM5P-cZpETEAiq4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "36688188233-f62kgb4e00321mlqfuub5ho9kqnfvfui.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

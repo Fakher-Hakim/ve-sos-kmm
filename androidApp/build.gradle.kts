@@ -1,5 +1,7 @@
 plugins {
     id("com.android.application")
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
     kotlin("android")
 }
 
@@ -44,7 +46,7 @@ dependencies {
 
     implementation("com.github.gcacace:signature-pad:1.3.1")
 
-    implementation(project.dependencies.platform("com.google.firebase:firebase-bom:29.0.4"))
+    implementation(project.dependencies.platform("com.google.firebase:firebase-bom:31.1.1"))
     implementation("com.google.firebase:firebase-analytics-ktx")
     implementation("com.google.firebase:firebase-crashlytics-ktx")
 }
