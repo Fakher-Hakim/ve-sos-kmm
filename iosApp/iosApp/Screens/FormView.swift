@@ -39,37 +39,40 @@ struct FormView: View {
         NavigationView {
             List {
                 Group{
-                    SectionTitleComponent(title: "Autorisation de prélévement permanent")
-                    Spacer()
-                        .frame(height: 24.0)
+                    SectionTitleComponent(title: "Autorisation de prelevement permanent")
+                        .listRowSeparator(.hidden)
+                    
                     VStack {
-                        Toggle("Oui, en tant que parrain ou marrain SOS, Je souhaite participer à la prise en charge des enfants sans soutien familiale pour leur offrir un foyer chaleureux, une education de qualité et un avenir meilleur.", isOn: $isConsent)
+                        Toggle("Oui, en tant que parrain ou marrain SOS, Je souhaite participer à la prise en charge des enfants sans soutien familiale pour leur offrir un foyer chaleureux, une education de qualite et un avenir meilleur.", isOn: $isConsent)
                             .padding(.horizontal)
                             .tint(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                        
-                        Spacer()
-                            .frame(height: 24.0)
+                            .font(.custom("Barlow-Bold", size: 12))
                         
                         HStack{
-                            TextField("En Donnat", text: $amount)
-                                .padding(.horizontal)
+                            TextField("999 DT", text: $amount)
                                 .keyboardType(/*@START_MENU_TOKEN@*/.numberPad/*@END_MENU_TOKEN@*/)
+                                .padding(.horizontal, 4.0)
+                                .padding(EdgeInsets(top: 0, leading: 4, bottom: 0, trailing: 4))
                                 .background(Color(red: 0.89, green: 0.745, blue: 0.776, opacity: 0.38))
+                                .cornerRadius(/*@START_MENU_TOKEN@*/16.0/*@END_MENU_TOKEN@*/)
+                                .font(.custom("Orbitron-Regular", size: 20))
+                            
                             Spacer()
-                                .frame(width: 24.0)
+                                .frame(width: 16)
+                            
                             TextField("En lettre", text: $amountLettre)
-                                .padding(.horizontal)
-                                .background(Color(red: 0.89, green: 0.745, blue: 0.776, opacity: 0.38))
+                                .textFieldStyle(VETextFieldStyle())
                         }
-                        
-                        Spacer()
-                            .frame(height: 24.0)
+                        .padding(.top, 24.0)
                         
                         Text("Je souhaite parrainer parrainer des enfants au village de")
+                            .font(.custom("Barlow-Bold", size: 16))
+                            .padding(.top, 24.0)
                         
                         Picker("Village", selection: $selectedVillage) {
                             ForEach(villages, id: \.self) {
                                 Text($0)
+                                    .font(.custom("Barlow-Bold", size: 14))
                             }
                         }
                         .pickerStyle(.wheel)
@@ -79,123 +82,101 @@ struct FormView: View {
                 .listSectionSeparator(/*@START_MENU_TOKEN@*/.hidden/*@END_MENU_TOKEN@*/)
                 
                 Group {
-                    SectionTitleComponent(title: "Mes Coordonnées")
+                    SectionTitleComponent(title: "Mes Coordonnees")
+                        .listRowSeparator(.hidden)
+                    
                     VStack {
-                        Spacer()
-                            .frame(height: 24.0)
-                        
                         HStack {
                             RadioButton(text: "Personne Physique", ifVariable: isPerson, onTapToActive: {
                                 isPerson = true
                             }, onTapToInactive: {
                                 isPerson = false
                             })
+                            .font(.custom("Barlow-Bold", size: 14))
                             Spacer()
-                            RadioButton(text: "Société", ifVariable: !isPerson, onTapToActive: {
+                            RadioButton(text: "Societe", ifVariable: !isPerson, onTapToActive: {
                                 isPerson = false
                             }, onTapToInactive: {
                                 isPerson = true
                             })
+                            .font(.custom("Barlow-Bold", size: 14))
                         }
-                        
-                        Spacer()
-                            .frame(height: 24.0)
+                        .padding(.vertical, 16.0)
                         
                         if (isPerson) {
                             VStack {
-                                TextField("Nom et prénom", text: $name)
-                                    .padding(.horizontal)
-                                    .background(Color(red: 0.89, green: 0.745, blue: 0.776, opacity: 0.38))
-                                
-                                Spacer()
-                                    .frame(height: 24.0)
+                                TextField("Nom et prenom", text: $name)
+                                    .textFieldStyle(VETextFieldStyle())
                                 
                                 TextField("Adresse", text: $address)
-                                    .padding(.horizontal)
-                                    .background(Color(red: 0.89, green: 0.745, blue: 0.776, opacity: 0.38))
+                                    .textFieldStyle(VETextFieldStyle())
                             }
                         } else {
                             
                             VStack {
                                 TextField("Raison Sociale", text: $raisonSociale)
-                                    .padding(.horizontal)
-                                    .background(Color(red: 0.89, green: 0.745, blue: 0.776, opacity: 0.38))
-                                
-                                Spacer()
-                                    .frame(height: 24.0)
+                                    .textFieldStyle(VETextFieldStyle())
                                 
                                 TextField("Matricule Fiscale", text: $matriculeFiscale)
-                                    .padding(.horizontal)
-                                    .background(Color(red: 0.89, green: 0.745, blue: 0.776, opacity: 0.38))
-                                
-                                Spacer()
-                                    .frame(height: 24.0)
+                                    .textFieldStyle(VETextFieldStyle())
                                 
                                 TextField("Premier Responsable", text: $premierResponsable)
-                                    .padding(.horizontal)
-                                    .background(Color(red: 0.89, green: 0.745, blue: 0.776, opacity: 0.38))
+                                    .textFieldStyle(VETextFieldStyle())
                             }
                         }
                         
-                        Spacer()
-                            .frame(height: 24.0)
-                        
                         TextField("Email", text: $email)
-                            .padding(.horizontal)
                             .keyboardType(/*@START_MENU_TOKEN@*/.emailAddress/*@END_MENU_TOKEN@*/)
-                            .background(Color(red: 0.89, green: 0.745, blue: 0.776, opacity: 0.38))
+                            .textFieldStyle(VETextFieldStyle())
                         
-                        Spacer()
-                            .frame(height: 24.0)
-                        
-                        TextField("Téléphone", text: $phone)
-                            .padding(.horizontal)
+                        TextField("+216 111 111", text: $phone)
                             .keyboardType(/*@START_MENU_TOKEN@*/.phonePad/*@END_MENU_TOKEN@*/)
+                            .padding(.horizontal, 4.0)
+                            .padding(EdgeInsets(top: 0, leading: 4, bottom: 0, trailing: 4))
                             .background(Color(red: 0.89, green: 0.745, blue: 0.776, opacity: 0.38))
+                            .cornerRadius(/*@START_MENU_TOKEN@*/16.0/*@END_MENU_TOKEN@*/)
+                            .font(.custom("Orbitron-Regular", size: 20))
                     }
                     .padding(.horizontal)
                 }
                 .listSectionSeparator(.hidden)
                 
                 Group {
-                    SectionTitleComponent(title: "Mes Coordonnées bancaire")
+                    SectionTitleComponent(title: "Mes Coordonnees bancaire")
+                        .listRowSeparator(.hidden)
+                    
                     VStack {
-                        Spacer()
-                            .frame(height: 24.0)
+                        
                         HStack{
                             TextField("Banque", text: $bank)
-                                .padding(.horizontal)
-                                .background(Color(red: 0.89, green: 0.745, blue: 0.776, opacity: 0.38))
-                            
-                            Spacer()
-                                .frame(width: 24.0)
+                                .textFieldStyle(VETextFieldStyle())
                             
                             TextField("Agence", text: $agence)
-                                .padding(.horizontal)
-                                .background(Color(red: 0.89, green: 0.745, blue: 0.776, opacity: 0.38))
+                                .textFieldStyle(VETextFieldStyle())
                         }
-                        Spacer()
-                            .frame(height: 24.0)
                         
-                        TextField("RIB", text: $rib)
-                            .padding(.horizontal)
+                        TextField("RIB 1234567890000", text: $rib)
                             .keyboardType(/*@START_MENU_TOKEN@*/.numberPad/*@END_MENU_TOKEN@*/)
+                            .padding(.horizontal, 4.0)
+                            .padding(EdgeInsets(top: 0, leading: 4, bottom: 0, trailing: 4))
                             .background(Color(red: 0.89, green: 0.745, blue: 0.776, opacity: 0.38))
+                            .cornerRadius(/*@START_MENU_TOKEN@*/16.0/*@END_MENU_TOKEN@*/)
+                            .font(.custom("Orbitron-Regular", size: 20))
                         
-                        Spacer()
-                            .frame(height: 24.0)
+                        Text("Premier mois de prelevement")
+                            .font(.custom("Barlow-Bold", size: 18))
+                            .padding(.top, 24.0)
                         
-                        Text("Premier mois de prélévement")
                         Picker("Village", selection: $selectedMonth) {
                             ForEach(months, id: \.self) {
                                 Text($0)
+                                    .font(.custom("Barlow-Bold", size: 16))
                             }
                         }
                         .pickerStyle(.wheel)
                         
-                        TextField("Fait A", text: $faitA)
-                            .padding(.horizontal)
-                            .background(Color(red: 0.89, green: 0.745, blue: 0.776, opacity: 0.38))
+                        TextField("Fait A...", text: $faitA)
+                            .textFieldStyle(VETextFieldStyle())
                     }
                     .padding(.horizontal)
                 }
@@ -205,13 +186,14 @@ struct FormView: View {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     VStack {
-                        Text("VE SOS").font(.headline)
+                        Text("VE SOS")
+                            .font(.headline)
                     }
                 }
                 
                 ToolbarItem(placement: .primaryAction) {
                     if(signature == nil) {
-                        NavigationLink("Sign", destination: SignatureView(availableTabs: [.draw],
+                        NavigationLink("Signer", destination: SignatureView(availableTabs: [.draw],
                                                                           onSave: { image in
                             self.signature = image
                             
@@ -245,6 +227,7 @@ struct FormView: View {
                             )
                             
                             if (isValid()) {
+                                print("form valid, sending...")
                                 showingAlert = false
                                 
                                 let mailBody = DataProvider().getMailBodyHtml(formDataModel: data)
@@ -257,7 +240,7 @@ struct FormView: View {
                             }
                             
                         } label: {
-                            Text("Submit")
+                            Text("Envoyer")
                         }.alert("Veuillez remplir tous les champs SVP.", isPresented: $showingAlert) {
                             Button("OK", role: .cancel) { }
                         }
@@ -265,6 +248,7 @@ struct FormView: View {
                 }
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     private func isValid() -> Bool {
@@ -274,9 +258,20 @@ struct FormView: View {
         return true
     }
 }
-    
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            FormView()
-        }
+
+struct VETextFieldStyle: TextFieldStyle {
+    func _body(configuration: TextField<Self._Label>) -> some View {
+        configuration
+            .font(.custom("Barlow-Regular", size: 20))
+            .padding(.horizontal, 4.0)
+            .padding(EdgeInsets(top: 0, leading: 4, bottom: 0, trailing: 4))
+            .background(Color(red: 0.89, green: 0.745, blue: 0.776, opacity: 0.38))
+            .cornerRadius(/*@START_MENU_TOKEN@*/16.0/*@END_MENU_TOKEN@*/)
     }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        FormView()
+    }
+}

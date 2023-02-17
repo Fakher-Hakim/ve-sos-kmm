@@ -1,23 +1,23 @@
 import SwiftUI
-import FirebaseCore
 
 @main
 struct iOSApp: App {
     
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    init() {        
+        for family: String in UIFont.familyNames
+        {
+            print(family)
+            for names: String in UIFont.fontNames(forFamilyName: family)
+            {
+                print("== \(names)")
+            }
+        }
+    }
     
 	var body: some Scene {
+        
 		WindowGroup {
 			FormView()
 		}
 	}
-}
-
-class AppDelegate: NSObject, UIApplicationDelegate {
-  func application(_ application: UIApplication,
-                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    FirebaseApp.configure()
-
-    return true
-  }
 }

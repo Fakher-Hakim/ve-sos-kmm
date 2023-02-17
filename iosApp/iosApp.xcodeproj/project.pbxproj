@@ -10,48 +10,48 @@
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
-		41B19919E5253F7C88DEC0C2 /* Pods_VE_SOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 735AC19FC7065A35185FE707 /* Pods_VE_SOS.framework */; };
-		CC5933BC296EF369004EC2D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC5933BB296EF369004EC2D3 /* GoogleService-Info.plist */; };
-		CC5933C0296EF52E004EC2D3 /* SwiftUIDigitalSignature in Frameworks */ = {isa = PBXBuildFile; productRef = CC5933BF296EF52E004EC2D3 /* SwiftUIDigitalSignature */; };
-		CC5933C3296EF64C004EC2D3 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CC5933C2296EF64C004EC2D3 /* FirebaseAnalytics */; };
-		CC5933C5296EF64C004EC2D3 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CC5933C4296EF64C004EC2D3 /* FirebaseAnalyticsSwift */; };
-		CC5933C7296EF64C004EC2D3 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = CC5933C6296EF64C004EC2D3 /* FirebaseCrashlytics */; };
-		CC5933C9296EF64C004EC2D3 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = CC5933C8296EF64C004EC2D3 /* FirebaseMessaging */; };
-		CC7B063D2969AEEE00327CB2 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B063C2969AEEE00327CB2 /* FormView.swift */; };
-		CC7B06442969AEFA00327CB2 /* SendEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B063F2969AEFA00327CB2 /* SendEmailViewController.swift */; };
-		CC7B06452969AEFA00327CB2 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B06402969AEFA00327CB2 /* RadioButton.swift */; };
-		CC7B06462969AEFA00327CB2 /* SectionTitleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B06412969AEFA00327CB2 /* SectionTitleComponent.swift */; };
+		CC9F9F70299EB7540043A4F3 /* DcfcRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CC9F9F6C299EB7530043A4F3 /* DcfcRegular.otf */; };
+		CC9F9F71299EB7540043A4F3 /* BarlowRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC9F9F6D299EB7530043A4F3 /* BarlowRegular.ttf */; };
+		CC9F9F72299EB7540043A4F3 /* NumericBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CC9F9F6E299EB7540043A4F3 /* NumericBold.otf */; };
+		CC9F9F73299EB7540043A4F3 /* BarlowBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC9F9F6F299EB7540043A4F3 /* BarlowBold.ttf */; };
+		CC9F9F75299EC8CB0043A4F3 /* Orbitron.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC9F9F74299EC8CA0043A4F3 /* Orbitron.ttf */; };
+		CCA11A80299D49880057E3C4 /* SwiftUIDigitalSignature in Frameworks */ = {isa = PBXBuildFile; productRef = CCA11A7F299D49880057E3C4 /* SwiftUIDigitalSignature */; };
+		CCA11A89299D4AB70057E3C4 /* FormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA11A82299D4AB70057E3C4 /* FormData.swift */; };
+		CCA11A8A299D4AB70057E3C4 /* SendEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA11A84299D4AB70057E3C4 /* SendEmailViewController.swift */; };
+		CCA11A8B299D4AB70057E3C4 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA11A85299D4AB70057E3C4 /* RadioButton.swift */; };
+		CCA11A8C299D4AB70057E3C4 /* SectionTitleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA11A86299D4AB70057E3C4 /* SectionTitleComponent.swift */; };
+		CCA11A8D299D4AB70057E3C4 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA11A88299D4AB70057E3C4 /* FormView.swift */; };
+		CDD281DA8A7FFA0A027E9874 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C493C6D7DC8B3E43D01031 /* Pods_iosApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		039F5497B55916C19730432B /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		0D5549CF9E1F89B320F63A46 /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
-		577734E0A317438810B12F7B /* Pods-VE SOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VE SOS.release.xcconfig"; path = "Target Support Files/Pods-VE SOS/Pods-VE SOS.release.xcconfig"; sourceTree = "<group>"; };
-		735AC19FC7065A35185FE707 /* Pods_VE_SOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VE_SOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7555FF7B242A565900829871 /* VE SOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VE SOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7555FF7B242A565900829871 /* SOS-VE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SOS-VE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CC5933BB296EF369004EC2D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CC7B063C2969AEEE00327CB2 /* FormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
-		CC7B063F2969AEFA00327CB2 /* SendEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendEmailViewController.swift; sourceTree = "<group>"; };
-		CC7B06402969AEFA00327CB2 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
-		CC7B06412969AEFA00327CB2 /* SectionTitleComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTitleComponent.swift; sourceTree = "<group>"; };
-		E854FDBE0FCDC18D0CD6D67B /* Pods-VE SOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VE SOS.debug.xcconfig"; path = "Target Support Files/Pods-VE SOS/Pods-VE SOS.debug.xcconfig"; sourceTree = "<group>"; };
+		9580C1D6E964FFE34376F0F7 /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
+		95C493C6D7DC8B3E43D01031 /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEB204C4276F321ABF93823A /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
+		CC9F9F6C299EB7530043A4F3 /* DcfcRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DcfcRegular.otf; sourceTree = "<group>"; };
+		CC9F9F6D299EB7530043A4F3 /* BarlowRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BarlowRegular.ttf; sourceTree = "<group>"; };
+		CC9F9F6E299EB7540043A4F3 /* NumericBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NumericBold.otf; sourceTree = "<group>"; };
+		CC9F9F6F299EB7540043A4F3 /* BarlowBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BarlowBold.ttf; sourceTree = "<group>"; };
+		CC9F9F74299EC8CA0043A4F3 /* Orbitron.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Orbitron.ttf; sourceTree = "<group>"; };
+		CCA11A82299D4AB70057E3C4 /* FormData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormData.swift; sourceTree = "<group>"; };
+		CCA11A84299D4AB70057E3C4 /* SendEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendEmailViewController.swift; sourceTree = "<group>"; };
+		CCA11A85299D4AB70057E3C4 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		CCA11A86299D4AB70057E3C4 /* SectionTitleComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTitleComponent.swift; sourceTree = "<group>"; };
+		CCA11A88299D4AB70057E3C4 /* FormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8881FC71D6CDD91BC267C712 /* Frameworks */ = {
+		8C7B9DA0BDD6CADF7B0AD831 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC5933C9296EF64C004EC2D3 /* FirebaseMessaging in Frameworks */,
-				CC5933C5296EF64C004EC2D3 /* FirebaseAnalyticsSwift in Frameworks */,
-				CC5933C0296EF52E004EC2D3 /* SwiftUIDigitalSignature in Frameworks */,
-				CC5933C7296EF64C004EC2D3 /* FirebaseCrashlytics in Frameworks */,
-				41B19919E5253F7C88DEC0C2 /* Pods_VE_SOS.framework in Frameworks */,
-				CC5933C3296EF64C004EC2D3 /* FirebaseAnalytics in Frameworks */,
+				CCA11A80299D49880057E3C4 /* SwiftUIDigitalSignature in Frameworks */,
+				CDD281DA8A7FFA0A027E9874 /* Pods_iosApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,21 +66,19 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		2C120F6E0C9393EA823D78FC /* Pods */ = {
+		387F85BEACA7BFF902EFB2B0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0D5549CF9E1F89B320F63A46 /* Pods-iosApp.debug.xcconfig */,
-				039F5497B55916C19730432B /* Pods-iosApp.release.xcconfig */,
-				E854FDBE0FCDC18D0CD6D67B /* Pods-VE SOS.debug.xcconfig */,
-				577734E0A317438810B12F7B /* Pods-VE SOS.release.xcconfig */,
+				BEB204C4276F321ABF93823A /* Pods-iosApp.debug.xcconfig */,
+				9580C1D6E964FFE34376F0F7 /* Pods-iosApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		70FA082687EEF624BD4AA26B /* Frameworks */ = {
+		5F62492022AB5C8AB4FEB465 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				735AC19FC7065A35185FE707 /* Pods_VE_SOS.framework */,
+				95C493C6D7DC8B3E43D01031 /* Pods_iosApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -90,15 +88,15 @@
 			children = (
 				7555FF7D242A565900829871 /* iosApp */,
 				7555FF7C242A565900829871 /* Products */,
-				2C120F6E0C9393EA823D78FC /* Pods */,
-				70FA082687EEF624BD4AA26B /* Frameworks */,
+				387F85BEACA7BFF902EFB2B0 /* Pods */,
+				5F62492022AB5C8AB4FEB465 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		7555FF7C242A565900829871 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7555FF7B242A565900829871 /* VE SOS.app */,
+				7555FF7B242A565900829871 /* SOS-VE.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,9 +104,10 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
-				CC5933BB296EF369004EC2D3 /* GoogleService-Info.plist */,
-				CC7B063E2969AEFA00327CB2 /* UI */,
-				CC7B063B2969AEEE00327CB2 /* Screens */,
+				CC9F9F6B299EB7180043A4F3 /* Fonts */,
+				CCA11A81299D4AB70057E3C4 /* Models */,
+				CCA11A87299D4AB70057E3C4 /* Screens */,
+				CCA11A83299D4AB70057E3C4 /* UI */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
@@ -117,51 +116,67 @@
 			path = iosApp;
 			sourceTree = "<group>";
 		};
-		CC7B063B2969AEEE00327CB2 /* Screens */ = {
+		CC9F9F6B299EB7180043A4F3 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				CC7B063C2969AEEE00327CB2 /* FormView.swift */,
+				CC9F9F74299EC8CA0043A4F3 /* Orbitron.ttf */,
+				CC9F9F6F299EB7540043A4F3 /* BarlowBold.ttf */,
+				CC9F9F6D299EB7530043A4F3 /* BarlowRegular.ttf */,
+				CC9F9F6C299EB7530043A4F3 /* DcfcRegular.otf */,
+				CC9F9F6E299EB7540043A4F3 /* NumericBold.otf */,
 			);
-			path = Screens;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
-		CC7B063E2969AEFA00327CB2 /* UI */ = {
+		CCA11A81299D4AB70057E3C4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CC7B063F2969AEFA00327CB2 /* SendEmailViewController.swift */,
-				CC7B06402969AEFA00327CB2 /* RadioButton.swift */,
-				CC7B06412969AEFA00327CB2 /* SectionTitleComponent.swift */,
+				CCA11A82299D4AB70057E3C4 /* FormData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CCA11A83299D4AB70057E3C4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CCA11A84299D4AB70057E3C4 /* SendEmailViewController.swift */,
+				CCA11A85299D4AB70057E3C4 /* RadioButton.swift */,
+				CCA11A86299D4AB70057E3C4 /* SectionTitleComponent.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		CCA11A87299D4AB70057E3C4 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				CCA11A88299D4AB70057E3C4 /* FormView.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7555FF7A242A565900829871 /* VE SOS */ = {
+		7555FF7A242A565900829871 /* SOS-VE */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7555FFA5242A565B00829871 /* Build configuration list for PBXNativeTarget "VE SOS" */;
+			buildConfigurationList = 7555FFA5242A565B00829871 /* Build configuration list for PBXNativeTarget "SOS-VE" */;
 			buildPhases = (
-				49B4981301A10D15E33B0499 /* [CP] Check Pods Manifest.lock */,
-				CC3EA9B229927A7200EBE156 /* ShellScript */,
+				43EED1576669DECAB304EFF2 /* [CP] Check Pods Manifest.lock */,
 				7555FF77242A565900829871 /* Sources */,
 				7555FF79242A565900829871 /* Resources */,
-				8881FC71D6CDD91BC267C712 /* Frameworks */,
+				8C7B9DA0BDD6CADF7B0AD831 /* Frameworks */,
+				6BC98ED0B47E645F7BEDCB21 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "VE SOS";
+			name = "SOS-VE";
 			packageProductDependencies = (
-				CC5933BF296EF52E004EC2D3 /* SwiftUIDigitalSignature */,
-				CC5933C2296EF64C004EC2D3 /* FirebaseAnalytics */,
-				CC5933C4296EF64C004EC2D3 /* FirebaseAnalyticsSwift */,
-				CC5933C6296EF64C004EC2D3 /* FirebaseCrashlytics */,
-				CC5933C8296EF64C004EC2D3 /* FirebaseMessaging */,
+				CCA11A7F299D49880057E3C4 /* SwiftUIDigitalSignature */,
 			);
 			productName = iosApp;
-			productReference = 7555FF7B242A565900829871 /* VE SOS.app */;
+			productReference = 7555FF7B242A565900829871 /* SOS-VE.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -189,14 +204,13 @@
 			);
 			mainGroup = 7555FF72242A565900829871;
 			packageReferences = (
-				CC5933BE296EF52E004EC2D3 /* XCRemoteSwiftPackageReference "swiftui-digital-signature" */,
-				CC5933C1296EF64C004EC2D3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				CCA11A7E299D49880057E3C4 /* XCRemoteSwiftPackageReference "swiftui-digital-signature" */,
 			);
 			productRefGroup = 7555FF7C242A565900829871 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7555FF7A242A565900829871 /* VE SOS */,
+				7555FF7A242A565900829871 /* SOS-VE */,
 			);
 		};
 /* End PBXProject section */
@@ -206,16 +220,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC9F9F72299EB7540043A4F3 /* NumericBold.otf in Resources */,
 				058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */,
 				058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */,
-				CC5933BC296EF369004EC2D3 /* GoogleService-Info.plist in Resources */,
+				CC9F9F71299EB7540043A4F3 /* BarlowRegular.ttf in Resources */,
+				CC9F9F73299EB7540043A4F3 /* BarlowBold.ttf in Resources */,
+				CC9F9F75299EC8CB0043A4F3 /* Orbitron.ttf in Resources */,
+				CC9F9F70299EB7540043A4F3 /* DcfcRegular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		49B4981301A10D15E33B0499 /* [CP] Check Pods Manifest.lock */ = {
+		43EED1576669DECAB304EFF2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -230,29 +248,29 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-VE SOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-iosApp-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CC3EA9B229927A7200EBE156 /* ShellScript */ = {
+		6BC98ED0B47E645F7BEDCB21 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd \"$SRCROOT/..\"\n./gradlew :shared:embedAndSignAppleFrameworkForXcode\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -261,11 +279,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC7B06442969AEFA00327CB2 /* SendEmailViewController.swift in Sources */,
-				CC7B06462969AEFA00327CB2 /* SectionTitleComponent.swift in Sources */,
-				CC7B063D2969AEEE00327CB2 /* FormView.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
-				CC7B06452969AEFA00327CB2 /* RadioButton.swift in Sources */,
+				CCA11A8A299D4AB70057E3C4 /* SendEmailViewController.swift in Sources */,
+				CCA11A8D299D4AB70057E3C4 /* FormView.swift in Sources */,
+				CCA11A8C299D4AB70057E3C4 /* SectionTitleComponent.swift in Sources */,
+				CCA11A8B299D4AB70057E3C4 /* RadioButton.swift in Sources */,
+				CCA11A89299D4AB70057E3C4 /* FormData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +342,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -378,7 +397,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -390,42 +409,25 @@
 		};
 		7555FFA6242A565B00829871 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E854FDBE0FCDC18D0CD6D67B /* Pods-VE SOS.debug.xcconfig */;
+			baseConfigurationReference = BEB204C4276F321ABF93823A /* Pods-iosApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 7A37Y57YU2;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${PODS_ROOT}/../../shared/build/cocoapods/framework\"",
-					"$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
-				);
 				INFOPLIST_FILE = iosApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "VE SOS";
+				INFOPLIST_KEY_CFBundleDisplayName = "SOS VE";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"c++\"",
-					"-framework",
-					"\"shared\"",
-					"$(inherited)",
-					"-framework",
-					shared,
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bridge.softwares.SOS-VE";
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bridge.softwares.sos-ve-tunisie";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -433,39 +435,24 @@
 		};
 		7555FFA7242A565B00829871 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 577734E0A317438810B12F7B /* Pods-VE SOS.release.xcconfig */;
+			baseConfigurationReference = 9580C1D6E964FFE34376F0F7 /* Pods-iosApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 7A37Y57YU2;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${PODS_ROOT}/../../shared/build/cocoapods/framework\"",
-					"$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
-				);
 				INFOPLIST_FILE = iosApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "VE SOS";
+				INFOPLIST_KEY_CFBundleDisplayName = "SOS VE";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"c++\"",
-					"-framework",
-					"\"shared\"",
-					"$(inherited)",
-					"-framework",
-					shared,
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bridge.softwares.vesos;
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bridge.softwares.sos-ve-tunisie";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -484,7 +471,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7555FFA5242A565B00829871 /* Build configuration list for PBXNativeTarget "VE SOS" */ = {
+		7555FFA5242A565B00829871 /* Build configuration list for PBXNativeTarget "SOS-VE" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7555FFA6242A565B00829871 /* Debug */,
@@ -496,7 +483,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CC5933BE296EF52E004EC2D3 /* XCRemoteSwiftPackageReference "swiftui-digital-signature" */ = {
+		CCA11A7E299D49880057E3C4 /* XCRemoteSwiftPackageReference "swiftui-digital-signature" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/globulus/swiftui-digital-signature";
 			requirement = {
@@ -504,41 +491,13 @@
 				minimumVersion = 0.1.2;
 			};
 		};
-		CC5933C1296EF64C004EC2D3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CC5933BF296EF52E004EC2D3 /* SwiftUIDigitalSignature */ = {
+		CCA11A7F299D49880057E3C4 /* SwiftUIDigitalSignature */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CC5933BE296EF52E004EC2D3 /* XCRemoteSwiftPackageReference "swiftui-digital-signature" */;
+			package = CCA11A7E299D49880057E3C4 /* XCRemoteSwiftPackageReference "swiftui-digital-signature" */;
 			productName = SwiftUIDigitalSignature;
-		};
-		CC5933C2296EF64C004EC2D3 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CC5933C1296EF64C004EC2D3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		CC5933C4296EF64C004EC2D3 /* FirebaseAnalyticsSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CC5933C1296EF64C004EC2D3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsSwift;
-		};
-		CC5933C6296EF64C004EC2D3 /* FirebaseCrashlytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CC5933C1296EF64C004EC2D3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCrashlytics;
-		};
-		CC5933C8296EF64C004EC2D3 /* FirebaseMessaging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CC5933C1296EF64C004EC2D3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
